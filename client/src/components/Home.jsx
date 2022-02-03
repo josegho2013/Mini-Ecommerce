@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
 import  Navbar  from "./Navbar";
+import "../styles/home.css"
 import Cards from "./Cards";
 import {  CardGroup,
    } from 'reactstrap';
@@ -23,7 +24,7 @@ const Home = () => {
   return (
     <div>
       <Navbar />
-      <div>
+      <div className="cards">
         {data ? (
           data.map((po) => {
             return (
