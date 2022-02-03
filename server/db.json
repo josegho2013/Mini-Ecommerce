@@ -1,0 +1,29 @@
+{
+  "turismo": [
+    {
+      "id": 1,
+      "nombre": "google chrome",
+      "porcentaje": "57.2"
+    },
+    {
+      "id": 2,
+      "nombre": "safari",
+      "porcentaje": "55.2"
+    },
+    {
+      "id": 3,
+      "nombre": "mozilla",
+      "porcentaje": "57.2"
+    },
+    {
+        "id": 4,
+        "nombre": "explorer",
+        "porcentaje": "57.2"
+      },
+      {
+        "id": 5,
+        "nombre": "opera",
+        "porcentaje": "45.2"
+      }
+  ]
+}
