@@ -1,7 +1,9 @@
 import React, { useEffect, useState } from "react";
 import axios from "axios";
-import  NavBar  from "./NavBar";
+import  Navbar  from "./Navbar";
 import Cards from "./Cards";
+import {  CardGroup,
+   } from 'reactstrap';
 
 const dataUrl = "http://localhost:3000/turismo";
 
@@ -20,7 +22,7 @@ const Home = () => {
 
   return (
     <div>
-      <NavBar />
+      <Navbar />
       <div>
         {data ? (
           data.map((po) => {

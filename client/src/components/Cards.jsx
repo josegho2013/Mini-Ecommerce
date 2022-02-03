@@ -1,16 +1,19 @@
 import React from "react";
+import "../styles/cards.css";
 
-const Cards = ({ img, name, description, date, amount }) => {
+const Cards = ({ img, name, date, amount }) => {
   return (
-    <div>
+    <div className="card">
       <img src={img} alt="" height="300px" width="300px" />
 
       <h2>{name}</h2>
-
-      <p>{description}</p>
-      <date>Date :{date}</date>
+      <h3>Date :{date}</h3>
+      <div>
       <h3>costo: {amount}</h3>
+      </div>
+      <div>
       <button>comprar</button>
+      </div>
     </div>
   );
 };
