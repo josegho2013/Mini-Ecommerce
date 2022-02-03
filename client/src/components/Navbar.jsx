@@ -1,4 +1,8 @@
 import React from 'react';
+import "../styles/navbar.css";
+
+import { AiOutlineShoppingCart } from "react-icons/ai"
+
 
  
 
@@ -8,9 +12,15 @@ const NavBar = () => {
 
 
 
-  return <div>
+  return <div className="navbar_container">
  
-<h1>soy la navbar</h1>
+<button>boton</button>
+<button>boton</button>
+
+
+ <AiOutlineShoppingCart size="4rem"/> 
+
+
   </div>;
 };
 

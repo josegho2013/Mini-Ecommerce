@@ -7,7 +7,7 @@ const Cards = ({ img, name, date, amount }) => {
       <img  className="img" src={img} alt="" height="200px" width="200px" />
       <h2>{name}</h2>
       <h4>Date:{date}</h4>
-      <h3>Costo: {amount} $  <button color=" green">comprar</button> </h3>
+      <h3>Costo: {amount} $  <button >Add to shopping Cart</button> </h3>
     
       <div>  <button>Ver Mas</button></div>
     
