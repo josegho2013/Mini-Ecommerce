@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
 import { Link } from "react-router-dom";
@@ -16,10 +16,11 @@ import {
   ModalFooter,
 } from "reactstrap";
 
-const Cart = () => {
+const Cart = (props) => {
+    console.log("aquii",props)
   const [abrirModal, setAbrirModal] = useState(false);
   //   const [cerrarModal, setCerrarModal] = useState(false);
-
+  const [addViaje, setAddViaje] = useState([]);
   const mostarModal = () => {
     setAbrirModal(true);
   };
@@ -32,6 +33,11 @@ const Cart = () => {
     left: "50%",
     transform: "translate(-50%, -50%)",
   };
+  useEffect(() => {
+    if (props?.addDestino) {
+      setAddViaje(props.addDestino);
+    }
+  }, []);
 
   return (
     <div className="principal">
@@ -48,16 +54,28 @@ const Cart = () => {
             <Table>
               <thead>
                 <tr>
-                  <th>item</th>
+                  <th>ID</th>
                   <th>img</th>
                   <th>Name</th>
                   <th>Price</th>
                   <th>Accion</th>
                 </tr>
               </thead>
-              <tbody></tbody>
+              <tbody>
+                {addViaje.length > 0 &&
+                  addViaje.map((dato) => {
+                    return (
+                      <tr key={dato.id}>
+                        <td>{dato.id}</td>
+                        <td>{dato.img}</td>
+                        <td>{dato.name}</td>
+                        <td>{dato.amount}</td>
+                      </tr>
+                    );
+                  })}
+              </tbody>
               <ModalFooter>
-                <Button color="primary" >vaciar carrito</Button>
+                <Button color="primary">Vaciar carrito</Button>
               </ModalFooter>
             </Table>
           </Modal>
