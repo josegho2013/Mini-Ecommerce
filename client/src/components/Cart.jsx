@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
+
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
@@ -21,6 +22,8 @@ const Cart = (props) => {
   const [abrirModal, setAbrirModal] = useState(false);
   //   const [cerrarModal, setCerrarModal] = useState(false);
   const [addViaje, setAddViaje] = useState([]);
+  console.log("addViaje",addViaje)
+  
   const mostarModal = () => {
     setAbrirModal(true);
   };

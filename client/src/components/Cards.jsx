@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import "../styles/cards.css";
-import { Table, Button } from "reactstrap";
+import {  Button } from "reactstrap";
 import Cart from "./Cart";
 
 const Cards = (props) => {
@@ -9,6 +9,7 @@ const Cards = (props) => {
 
   const addDestino = (props) => {
     <Cart addDestino={props}/>
+    console.log("props cards",props)
   };
 
   return (
