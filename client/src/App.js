@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import React from "react";
 import Home from "./components/Home";
+import Cart from "./components/Cart";
 
 import "./App.css";
 
@@ -9,6 +10,8 @@ function App() {
     <div>
       <Routes>
         <Route exact path="/Home" element={<Home />} />
+        <Route exact path="/Navbar" element={<Cart />} />
+
         
 
       </Routes>

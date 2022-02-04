@@ -3,8 +3,7 @@ import axios from "axios";
 import  Navbar  from "./Navbar";
 import "../styles/home.css"
 import Cards from "./Cards";
-import {  CardGroup,
-   } from 'reactstrap';
+
 
 const dataUrl = "http://localhost:3000/turismo";
 
