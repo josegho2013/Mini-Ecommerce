@@ -1,17 +1,31 @@
 import React, { useState } from "react";
 import "../styles/cards.css";
-import {  Button } from "reactstrap";
+import {
+  Table,
+  Button,
+  Container,
+  Modal,
+  ModalHeader,
+  ModalBody,
+  FormGroup,
+  ModalFooter,
+} from "reactstrap";
 import Cart from "./Cart";
 
 const Cards = (props) => {
   // const[deleteViaje, setDeleteViaje]=useState([])
   // const[vaciarCart, setVaciarCart]=useState([])
+  const [mostarModal, setMostarModal] = useState(false);
+  const [test, setTest] = useState(false);
 
   const addDestino = (props) => {
-    <Cart addDestino={props}/>
-    console.log("props cards",props)
+    console.log("props cards", props);
+    setTest(true);
+    return <Cart addDestino={props} />;
   };
-
+  const mostrardetalle = () => {
+    setMostarModal(true);
+  };
   return (
     <div className="principal">
       <div className="card">
@@ -29,9 +43,11 @@ const Cards = (props) => {
           <Button outline color="warning" onClick={() => addDestino(props)}>
             Add to shopping Cart
           </Button>
+          {test && <Cart hidden addDestino={props} />}
         </h4>
+        <Modal isOpen={mostarModal}></Modal>
         <div>
-          <Button outline color="primary">
+          <Button outline color="primary" onClick={() => mostrardetalle()}>
             Ver Mas
           </Button>
         </div>

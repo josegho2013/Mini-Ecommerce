@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from "react";
 import "bootstrap/dist/css/bootstrap.css";
 
-
 import { Link } from "react-router-dom";
 import { AiOutlineShoppingCart } from "react-icons/ai";
 import { AiOutlineClose } from "react-icons/ai";
@@ -18,12 +17,12 @@ import {
 } from "reactstrap";
 
 const Cart = (props) => {
-    console.log("aquii",props)
+  console.log("aquii", props);
   const [abrirModal, setAbrirModal] = useState(false);
   //   const [cerrarModal, setCerrarModal] = useState(false);
   const [addViaje, setAddViaje] = useState([]);
-  console.log("addViaje",addViaje)
-  
+  console.log("addViaje", addViaje);
+
   const mostarModal = () => {
     setAbrirModal(true);
   };
@@ -38,7 +37,13 @@ const Cart = (props) => {
   };
   useEffect(() => {
     if (props?.addDestino) {
-      setAddViaje(props.addDestino);
+      console.log("prueba: ", addViaje);
+      let lista = [...addViaje];
+      lista.push(props.addDestino);
+
+      setAddViaje(lista);
+      //   setAddViaje([...addViaje, props.addDestino]);
+      //   setAddViaje({...addViaje, props.addDestino});
     }
   }, []);
 
@@ -70,7 +75,16 @@ const Cart = (props) => {
                     return (
                       <tr key={dato.id}>
                         <td>{dato.id}</td>
-                        <td>{dato.img}</td>
+                        <td>
+                          {" "}
+                          <img
+                            className="img"
+                            src={dato.img}
+                            alt=""
+                            height="20px"
+                            width="20px"
+                          />
+                        </td>
                         <td>{dato.name}</td>
                         <td>{dato.amount}</td>
                       </tr>
